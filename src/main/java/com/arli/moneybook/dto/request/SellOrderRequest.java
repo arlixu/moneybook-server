@@ -5,9 +5,8 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 
 @Data
-public class BuyOrderRequest {
-    private Integer orderId;
-    @NotNull(message="商品名不能为空。")
+public class SellOrderRequest {
+    @NotNull(message="商品不存在。")
     private String goodsName;
     @NotNull(message="商品数量不能为空。")
     private Integer number;
