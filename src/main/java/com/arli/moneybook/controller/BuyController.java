@@ -53,8 +53,9 @@ public class BuyController {
 
      @RequestMapping("/list")
      @ResponseBody
-    public  ApiResult<Page<BuyOrder>> getBuyOrder(@RequestParam Integer pageNo,@RequestParam Integer pageSize)
+    public  ApiResult<Page<BuyOrder>> getBuyOrder(@RequestParam(defaultValue = "0") Integer pageNo, @RequestParam(defaultValue = "10") Integer pageSize)
      {
+
          Page<BuyOrder> all = orderRepository.findAll(new PageRequest(pageNo,pageSize, Sort.Direction.DESC,"createAt"));
          return  ApiResult.success("/buy/list",all);
      }

@@ -1,5 +1,6 @@
 package com.arli.moneybook.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ public class Goods {
     private Integer goodsId;
     private String goodsName;
     private  Integer goodsCount=0;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createAt=new Date();
     private Date updateAt=new Date();
 
